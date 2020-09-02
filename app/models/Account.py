@@ -113,7 +113,7 @@ class Account():
                 except Exception as err:
                     error = err
             if error:
-                flash(error)
+                flash(str(error))
         
     def logout(self):
         self.user.unset_user()

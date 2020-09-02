@@ -26,7 +26,7 @@ def register():
             # Registration error to be flashed
             error = err
         if error:
-            flash(error)
+            flash(str(error))
         else:
             # Registration successful so redirect
             flash("Please login to get started!")
@@ -45,7 +45,7 @@ def login():
         except Exception as err:
             error = err
         if error:
-            flash(error)
+            flash(str(error))
         else:
             flash("Welcome back!")
             return redirect(url_for('account.profile'))
@@ -64,7 +64,7 @@ def profile():
         except Exception as err:
             error = err
         if error:
-            flash(error)
+            flash(str(error))
 
     return render_template('account/profile.html')
     
