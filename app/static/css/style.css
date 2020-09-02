@@ -1,0 +1,117 @@
+
+#error404{
+    background: url(../img/error404.jpg) no-repeat right center;
+    height: calc(100vh - 56px);
+    display: block;
+    position: relative;
+    background-size: 626px 626px;
+} 
+
+#error404 h1{
+    font-size: 8rem;
+    margin-top: 2rem;
+}
+#brand{
+    position: relative;
+    left: 50px;
+    font-size: 25px;
+}
+#registerform{
+    margin: left;
+}
+.forms{
+    position: relative;
+    right: 25rem;
+}
+#upload{
+    position: relative;
+    left: 40rem;
+    top: -35rem;
+    width: 25%;
+}
+#photo1{
+    border-radius: 50%;
+    position: relative;
+    left: 25rem;
+    top: -45rem;
+}
+#signup{
+    position: relative;
+    left: 8rem;
+    top: 4rem;
+    font-weight: 500;
+    font-size: 25px;
+    background-color: orange;
+}
+#sign-up2{
+    position: relative;
+    left: 4rem;
+    top: 4rem;
+}
+#avatar{
+    text-emphasis-color: gray;
+    position: relative;
+    left: 38rem;
+    top: -60rem;
+}
+#brandhead{
+    position: relative;
+    top:-74.2rem;
+    right: 32rem;
+    color: white;
+    font-weight: 450;
+    font-size: larger;
+}
+.homepage{
+    background: url(https://images.wallpaperscraft.com/image/mountain_peak_trees_183964_1920x1080.jpg)
+    no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+#headertext{
+    position: absolute;
+    font-size: 80px;
+    top: 8rem;
+    left: 8rem;
+    color: white;
+    text-shadow: 2px 2px 8px #000000;
+}
+#paragraph{
+    position: absolute;
+    top: 16rem;
+    left: 9rem;
+    max-width: 500px;
+    color: white;
+    font-size: 25px;
+    text-shadow: 3px 3px 12px black;
+}
+#submitbutton{
+    position: absolute;
+    top: 35rem;
+    left: 40rem;
+    border-radius: 8px;
+    background-color: orange;
+    font-size: larger;
+    font-weight: 500;
+    padding: 1.5rem 3rem 1.5rem 3rem;
+}
+#sign-uphome{
+    position: absolute;
+    top: 42rem;
+    left: 37rem;
+}
+.logforms{
+    position: absolute;
+    left: 5rem;
+    width: 30rem;
+}
+#loginbutton{
+    position: absolute;
+    top: 35rem;
+    left: 17.5rem;
+    background-color: orange;
+    font-size: x-large;
+    font-weight: 500;
+}

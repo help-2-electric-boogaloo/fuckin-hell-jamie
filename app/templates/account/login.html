@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block main %}
+<link rel="stylesheet" href="static/css/style.css">
+  <h1>Welcome back to Snap &Nap!</h1>
+  <p>Log in to get started!</p>
+  <form method="POST" action="/login">
+    <br>  
+    <div id="logregisterform">
+      {% with messages = get_flashed_messages() %}
+          {% if messages %}
+              {% for message in messages %}
+              <p>{{ message }}</p>
+              {% endfor %}
+          {% endif %}
+      {% endwith %}
+      <container class="logforms">
+      <div class="form-group">
+          <label for="logusername">Username</label>
+          <input type="text" class="form-control" placeholder="Username" name="logusername">
+      </div>
+      <br>
+      <div class="form-group">
+          <label for="logpassword">Password</label>
+          <input type="password" class="form-control"  placeholder="Password" name="logpassword">
+      </div>
+      <br>
+      <div class="form-group">
+          <label for="logpassword_confirm">Confirm Password</label>
+          <input type="password" class="form-control" placeholder="Password" name="logpassword_confirm">
+      </div>
+    </container>
+  </div>
+      <button id="loginbutton" type="submit" class="btn btn-primary">Login!</button>
+  </form>
+{% endblock %}

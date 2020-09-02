@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block main %}
+  <div class="container">
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-5 loginpage">
+            <form method="POST" action="/register">
+              <br>  
+              <div id="registerform">
+                <h1 class="title">Register to Snap &Nap</h1>
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for message in messages %}
+                        <p>{{ message }}</p>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+                <container class="forms">
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email" name="email">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control"  placeholder="Username" name="username">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control"  placeholder="Password" name="password">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="password_confirm">Confirm Password</label>
+                    <input type="password" class="form-control" placeholder="Password" name="password_confirm">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="phonenumber">Phone Number:</label>
+                    <input name="phonenumber" type="tel" class="form-control"  placeholder="Phone Number" name="username">
+                </div>
+                <br>
+                <br>
+                <div class="form-group">
+                    <label for="confirm_phonenumber">Confirm Phone Number:</label>
+                    <input name="confirm_phonenumber" type="tel" class="form-control"  placeholder="Phone Number" name="username">
+                </div>
+                <br>
+              </container>
+            </div>
+                <button id="signup" type="submit" class="btn btn-primary">Sign Up!</button>
+            </form>
+            <br>
+            <p id="sign-up2">Already Have an Account?<a style="font-style: italic;" href="login">  Login Here:</a></p>
+        </div>
+      </div>
+      <div id="upload" class="custom-file">
+        <input type="file" class="custom-file-input" id="customFile">
+        <label class="custom-file-label" for="customFile">Choose file</label>
+      </div>
+      <img src="https://via.placeholder.com/200" alt="placeholder" id="photo1">
+      <p id="avatar">Profile Icon:</p>
+      <p id="brandhead">-Registration</p>
+
+
+{% endblock %}
