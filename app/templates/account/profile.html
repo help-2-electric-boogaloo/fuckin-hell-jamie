@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block main %}
+<body>
+    <h1>This is your profile, and here are your details below:</h1>
+    <label for="firstname">Name:</label>
+    <input name="firstname" value="{{session['user']['first_name']}}">
+</body>
+{% endblock %}

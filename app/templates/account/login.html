@@ -15,21 +15,17 @@
       {% endwith %}
       <container class="logforms">
       <div class="form-group">
-          <label for="logusername">Username</label>
-          <input type="text" class="form-control" placeholder="Username" name="logusername">
+          <label for="username">Email:</label>
+          <input type="email" class="form-control" placeholder="Email:" name="email">
       </div>
       <br>
       <div class="form-group">
-          <label for="logpassword">Password</label>
-          <input type="password" class="form-control"  placeholder="Password" name="logpassword">
+          <label for="password">Password</label>
+          <input type="password" class="form-control"  placeholder="Password" name="password">
       </div>
       <br>
-      <div class="form-group">
-          <label for="logpassword_confirm">Confirm Password</label>
-          <input type="password" class="form-control" placeholder="Password" name="logpassword_confirm">
-      </div>
     </container>
   </div>
-      <button id="loginbutton" type="submit" class="btn btn-primary">Login!</button>
+      <button id="loginbutton" type="submit" class="btn btn-primary">Login!<a href="profile"></a></button>
   </form>
 {% endblock %}
