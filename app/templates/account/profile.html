@@ -1,8 +1,11 @@
 {% extends "base.html" %}
 {% block main %}
-<body>
+<form method="POST" action="/profile" enctype="multipart/form-data">
     <h1>This is your profile, and here are your details below:</h1>
-    <label for="firstname">Name:</label>
-    <input name="firstname" value="{{session['user']['first_name']}}">
-</body>
+        <label for="email">Email:</label>
+            <input id="emailbox" name="email" value="{{session['user']['email']}}"></input>
+              <br>
+                <label for="username">Username:</label>
+                    <input id="usernamebox" name="username" value="{{session['user']['username']}}"></input>
+                </form>
 {% endblock %}

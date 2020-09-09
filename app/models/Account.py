@@ -8,6 +8,7 @@ class Account():
 
     def __init__(self):
         self.user = User()
+        return None
 
     def register(self, request):
         """ 
@@ -101,7 +102,6 @@ class Account():
                 if 'avatar' in request.files:
                     file = request.files['avatar']
                     if file.filename:
-                        flask_app.logger.info(file)
                         uploader = Upload()
                         avatar = uploader.upload(file, session['user']['localId'])
                         session['user']['avatar'] = avatar

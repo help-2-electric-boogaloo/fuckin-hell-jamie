@@ -1,0 +1,13 @@
+    {% extends "base.html" %}
+    {% block main %}
+    <body class="homepage">
+      <div class="text-container">
+        <h1 id="headertext">Welcome to Snap &Nap!</h1>
+      </div>
+    <p id="paragraph">Snap &Nap is an all-new image sharing website for everyone to use, completely free! Here you can: Share images and videos, comment on other users' posts, explore new things, make new friends and so much more! So what are you waiting for? Sign up today!</p>
+      <form class="registerbutt" method="get" action="/register">
+        <button id="submitbutton" type="submit" class="btn btn-primary">Register!</button>
+      </form>
+    <p id="sign-uphome" style="color:white">Already Have an Account?<a style="font-style: italic;" href="login">  Login Here:</a></p>
+    </body>
+    {% endblock %}
