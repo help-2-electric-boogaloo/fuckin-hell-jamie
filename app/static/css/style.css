@@ -23,12 +23,6 @@
     position: relative;
     right: 25rem;
 }
-#upload{
-    position: relative;
-    left: 40rem;
-    top: -35rem;
-    width: 25%;
-}
 #photo1{
     border-radius: 50%;
     position: relative;
@@ -47,12 +41,6 @@
     position: relative;
     left: 4rem;
     top: 4rem;
-}
-#avatar{
-    text-emphasis-color: gray;
-    position: relative;
-    left: 38rem;
-    top: -60rem;
 }
 #brandhead{
     position: relative;
@@ -129,4 +117,17 @@
 .grid-item img{
     width: 100%;
     height: auto;
+}
+img{
+    max-width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    position: relative;
+    top: -20rem;
+    left: 40rem;
+}
+#helpmegod{
+    position: relative;
+    width: 30rem;
+    left: 10rem;
 }

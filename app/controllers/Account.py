@@ -55,6 +55,9 @@ def login():
 @bp.route('/profile', methods=['GET', 'POST'])
 def profile():
 
+    flask_app.logger.info('################request.form controller')
+    flask_app.logger.info(request.form)
+    flask_app.logger.info(request.method)
     if request.method == 'POST':
         error = None
         try:

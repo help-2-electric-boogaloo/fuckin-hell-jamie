@@ -93,6 +93,8 @@ class Account():
             first_name = request.form['firstname']
             last_name = request.form['lastname']
 
+            flask_app.logger.info('################request.form')
+            flask_app.logger.info(request.form)
             error = None
             if not first_name:
                 error = 'A first name is required.'
