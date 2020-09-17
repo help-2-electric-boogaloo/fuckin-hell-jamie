@@ -19,7 +19,7 @@
         <input type="file" name="avatar"/>
       </div>
       {% if session['user']['avatar'] %}
-      <div id="avatar">
+      <div class="avatar">
         <img src="{{ session['user']['avatar'] }}" alt="Your Profile Image">
       </div>
       {% endif %}
