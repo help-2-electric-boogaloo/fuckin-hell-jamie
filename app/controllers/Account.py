@@ -71,8 +71,3 @@ def profile():
 
     return render_template('account/profile.html')
     
-@bp.route('/logout')
-def logout():
-    account = Account()
-    account.logout()
-    return redirect(url_for('home.index'))
