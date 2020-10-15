@@ -1,7 +1,7 @@
 from app.classes.Database import Database
 from app.classes.Upload import Upload
 from app.models.User import User
-from flask import session
+from flask import session, flash
 from flask import current_app as flask_app
 
 class Account():
@@ -93,8 +93,6 @@ class Account():
             first_name = request.form['firstname']
             last_name = request.form['lastname']
 
-            flask_app.logger.info('################request.form')
-            flask_app.logger.info(request.form)
             error = None
             if not first_name:
                 error = 'A first name is required.'
@@ -106,16 +104,43 @@ class Account():
                     if file.filename:
                         uploader = Upload()
                         avatar = uploader.upload(file, session['user']['localId'])
-                        session['user']['avatar'] = avatar
+                        session['user']['avatar'] = "/" + avatar.strip("/")
                 try:
                     session['user']['first_name'] = first_name
                     session['user']['last_name'] = last_name
                     database = Database()
                     user_auth = database.update_user(session['user'])
+                    session.modified = True
                 except Exception as err:
                     error = err
-            if error:
-                flash(str(error))
+
+        if error:
+            raise Exception(error)
+        else:
+            return
+        
+    def like(self, image_id, like, request):
+                
+        changed = False
+        likes = session['user']['likes']
+
+        if like == 'true':
+            if image_id not in likes:
+                likes.append(image_id)
+                changed = True
+        else:
+            if image_id in likes:
+                likes.remove(image_id)
+                changed = True
+
+        if changed:
+            session['user']['likes'] = likes
+            database = Database()
+            database.update_user(session['user'])
+            session.modified = True
+
+        return changed
         
     def logout(self):
         self.user.unset_user()
+

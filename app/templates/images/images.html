@@ -4,23 +4,40 @@
     <div id="images" class="container-fluid">
 		<div class="row">
 			<div class="col">
-				<h2>My Images</h2>
+				<h2>{{ title }}</h2>
 				{% with messages = get_flashed_messages() %}
 					{# Handle messages here #}
 				{% endwith %}
 				{% if images %}
-					<div class="grid">
-					{% for image_object in images.each() %}
-						{% with image = image_object.val() %}
-						<div class="grid-item">
-							<img src="{{ image.upload_location }}" alt="{{ image.description }}">
-							<p>{{ image.description }}</p>
+				<div class="grid">
+				{% set liked = 'fas' %}
+				{% set not_liked = 'far' %}
+				{% set likes = session['user']['likes'] %}
+				{% for image_object in images.each() %}
+					{% with image = image_object.val() %}
+					<div class="grid-item">
+						<img src="{{ image.upload_location }}" alt="{{ image.description }}">
+						<div class="info row mx-0">
+							<div class="col-2 avatar pl-0">
+								<img src="{{ image.user_avatar }}" alt="{{ image.user_name }}">
+							</div>
+							<div class="col-10 pr-0">
+								<h5>
+									{{ image.name }} 
+									<a href="/images/like/{{ image.id }}">
+										<i class="like fa-heart {{ liked if image.id in likes else not_liked }}" data-image="{{ image.id }}"></i>
+									</a>
+								</h5>
+								<p>{{ image.description }}</p>
+								<small>{{ image.user_name }}</small>
+							</div>
 						</div>
-						{% endwith %}
-					{% endfor %}
 					</div>
+					{% endwith %}
+				{% endfor %}
+				</div>
 				{% endif %}
 			</div>
 		</div>
-    </div>
+	</div>
     {% endblock %}

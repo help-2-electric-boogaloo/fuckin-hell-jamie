@@ -1,7 +1,7 @@
 import os
 from flask import Flask, flash, request, redirect, url_for
 from flask import current_app as flask_app
-from app import UPLOAD_FOLDER, SITE_ROOT
+from app import SITE_ROOT
 
 class Upload():
 
@@ -9,7 +9,6 @@ class Upload():
         self.extensions = {'png', 'jpg', 'jpeg', 'gif'}
 
     def upload(self, file, filename):
-
         allowed_extension = self.allowed_file(file.filename)
         if allowed_extension:
             fullname = filename + '.' + allowed_extension

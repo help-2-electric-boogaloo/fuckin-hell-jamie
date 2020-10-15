@@ -41,11 +41,12 @@ class Database():
 
     # Image Requests
     def get_images(self, limit=20, user_id=False):
+        
         try:
             if (user_id):
                 images = self.db.child("images").order_by_child("user_id").equal_to(user_id).limit_to_first(limit).get()
             else:
-                images = self.db.child("images").order_by_child("created_at").limit_to_first(limit).get()
+                images = self.db.child("images").order_by_child("user_id").limit_to_first(limit).get()
 
             flask_app.logger.info('####################### images val #####################')
             flask_app.logger.info(images.val())
@@ -56,12 +57,55 @@ class Database():
             
         except Exception as err:
             self.process_error(err)
+
+    def get_category_images(self, category, limit=20):
+        try:
+            images = self.db.child("images").order_by_child("category").equal_to(category).limit_to_first(limit).get()
+
+            if isinstance(images.val(), OrderedDict):
+                return images
+            else:
+                return False
+            
+        except Exception as err:
+            self.process_error(err)
         
+    def get_image(self, image_id):
+        
+        error = None
+        image = False
+        
+        try:
+            image = self.db.child("images").child(image_id).get()
+
+        except Exception as err:
+            flask_app.logger.info(err)
+            error = err
+
+        if error:
+            raise Exception(error)
+        else:
+            return image.val()
+
     def save_image(self, image_data, image_id):
         try:
             self.db.child("images").child(image_id).set(image_data)
         except Exception as err:
             self.process_error(err)
+
+    def delete_image(self, image_id):
+        try:
+            self.db.child("images").child(image_id).remove()
+        except Exception as err:
+            self.process_error(err)
+
+    def remove_matching_value(self, data, value):
+        return_data = []
+        for key in data:
+            if key != value:
+                return_data.append(key)
+        return return_data
+
 
     # User and Account Requests
     def register(self, user_data, password):
