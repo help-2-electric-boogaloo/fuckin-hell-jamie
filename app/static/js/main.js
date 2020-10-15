@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
 	$('i.like').click(function(e) {
 		
 		e.stopPropagation();
@@ -32,10 +33,6 @@ $(document).ready(function(){
 		gutter: 30
 	});
 
-	  // layout Masonry after each image loads
-	$grid.imagesLoaded().progress( function() {
-		$grid.masonry('layout');
-	});
 
 	$('.grid-item').click(function(){
 		var image_data = $(this).data(image);
