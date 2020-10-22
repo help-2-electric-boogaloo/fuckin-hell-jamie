@@ -2,11 +2,13 @@
 {% block main %}
 <body class="loginpagebg">
   <link rel="stylesheet" href="static/css/style.css">
-    <h1>Welcome back to Snap &Nap!</h1>
+  <div class="logintext">
+    <h1>Welcome back to Snap & Nap!</h1>
     <p>Log in to get started!</p>
-    <form method="POST" action="/login">
+  </div>
+    <form id="logregisterform" method="POST" action="/login">
       <br>  
-      <div id="logregisterform">
+      <div>
         {% with messages = get_flashed_messages() %}
             {% if messages %}
                 {% for message in messages %}
@@ -21,7 +23,7 @@
         </div>
         <br>
         <div class="form-group">
-            <label for="password">Password</label>
+            <label for="password">Password:</label>
             <input type="password" class="form-control"  placeholder="Password" name="password">
         </div>
         <br>
