@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block main %}
+<body class= registerbg>
   <div class="container">
     <div class="row">
         <div class="col-3"></div>
@@ -11,7 +12,7 @@
                 {% with messages = get_flashed_messages() %}
                     {% if messages %}
                         {% for message in messages %}
-                        <p>{{ message }}</p>
+                        <p id="warnings">{{ message }}</p>
                         {% endfor %}
                     {% endif %}
                 {% endwith %}
@@ -45,6 +46,5 @@
         </div>
       </div>
       <p id="brandhead">-Registration</p>
-
-
+    </body>
 {% endblock %}

@@ -157,3 +157,63 @@
 .dropdown-item{
     color: white;
 }
+.imgboi{
+    width: 300px;
+    height: auto;
+    align-content: center;
+}
+.editor{
+    background: url(https://wallpapercave.com/wp/ebklaUn.jpg)
+    no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.grid-item{
+    width: 300px;
+    height: 300px;
+    padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+    padding-left: 80px
+}
+.allimages{
+    background: url(https://wallpapercave.com/wp/TfTdoPd.png)
+    no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.registerbg{
+    background: url(https://images.wallpaperscraft.com/image/mountains_spruce_snow_190607_1920x1080.jpg)
+    no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.loginpagebg{
+    background: url(https://images.wallpaperscraft.com/image/spots_glitters_paint_190503_1280x720.jpg)
+    no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    
+}
+#warnings{
+    color: red;
+    font-size: large;
+    font-weight: 1000;
+    position: relative;
+    right: 20rem;
+}
+#logwarnings{
+    color: red;
+    font-size: large;
+    font-weight: 1000;
+    position: relative;
+    left: 20rem;
+}
