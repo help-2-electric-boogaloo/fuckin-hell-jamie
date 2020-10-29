@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block main %}
-<form id="helpmegod" method="POST" action="/profile" enctype="multipart/form-data">
+<form id="fullprofileform" method="POST" action="/profile" enctype="multipart/form-data">
     <h1>This is your profile, and here are your details below:</h1>
     
     <div class="form-group">
@@ -20,7 +20,7 @@
       </div>
       {% if session['user']['avatar'] %}
       <div class="avatar">
-        <img src="{{ session['user']['avatar'] }}" alt="Your Profile Image">
+        <img class="avatar" src="{{ session['user']['avatar'] }}" alt="Your Profile Image">
       </div>
       {% endif %}
     <button id="loginbutton" type="submit" class="btn btn-primary">Update!</button>

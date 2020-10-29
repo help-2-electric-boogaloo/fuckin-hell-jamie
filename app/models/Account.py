@@ -64,10 +64,18 @@ class Account():
             return
         
     def login(self, request):
+        """
+        login method.
+
+        Processes POST request, and logs the user into Firebase upon success.
+
+        """
+        # Request is sent to Firebase DB.
         if request.method == 'POST':
             email = request.form['email']
             password = request.form['password']
 
+        # Validates required login fields.
             error = None
             if not email:
                 error = 'An email is required.'
@@ -84,15 +92,31 @@ class Account():
                     error = err
 
         if error:
+            # Raise error from failed Firebase request.
             raise Exception(error)
         else:
+            # Return on success.
             return
         
     def update(self, request):
+        """
+        Update method.
+
+        Processes update request, and edits users' data in Firebase upon success.
+
+        Parameters: 
+            request (obj): The POST request object
+    
+        Raises: 
+            error (Exception): Error from failed Firebase request    
+
+        """
+        # Extracts the required fields from POST request.
         if request.method == 'POST':
             first_name = request.form['firstname']
             last_name = request.form['lastname']
 
+            # Validates required fields from the update request. 
             error = None
             if not first_name:
                 error = 'A first name is required.'
@@ -112,18 +136,34 @@ class Account():
                     user_auth = database.update_user(session['user'])
                     session.modified = True
                 except Exception as err:
+                    # Raises error from failed Firebase request.
                     error = err
 
         if error:
+            # Raises error from failed Firebase request.
             raise Exception(error)
         else:
+            # Return upon success
             return
         
     def like(self, image_id, like, request):
-                
+        """
+        Like method.
+
+        Processes POST request, and likes image with the matching image ID.
+
+        Parameters:
+            request (obj): The POST request object (the like)
+
+        Raises:
+            error (exception): Error from failed Firebase data request
+
+        """
+        # validates like request.                
         changed = False
         likes = session['user']['likes']
 
+        # Checks the state of the variable and changes it to the other value.
         if like == 'true':
             if image_id not in likes:
                 likes.append(image_id)
@@ -138,9 +178,16 @@ class Account():
             database = Database()
             database.update_user(session['user'])
             session.modified = True
-
+        # Return change upon success
         return changed
         
     def logout(self):
+        """
+        Logout method
+
+        Processes logout request, and logs the user out of Firebase upon success.
+
+        """
+        # Logs the user out of Firebase. 
         self.user.unset_user()
 

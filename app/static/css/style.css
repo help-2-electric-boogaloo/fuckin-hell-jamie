@@ -1,4 +1,46 @@
 
+/* start of backgrounds */
+.registerbg{
+    background: url(https://images.wallpaperscraft.com/image/mountains_spruce_snow_190607_1920x1080.jpg)
+    no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.loginpagebg{
+    background: url(https://images.wallpaperscraft.com/image/spots_glitters_paint_190503_1280x720.jpg)
+    no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    
+}
+.homepage{
+    background: url(https://images.wallpaperscraft.com/image/mountain_peak_trees_183964_1920x1080.jpg)
+    no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.allimages{
+    background: url(https://wallpapercave.com/wp/TfTdoPd.png)
+    no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.editor{
+    background: url(https://wallpapercave.com/wp/ebklaUn.jpg)
+    no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
 #error404{
     background: url(../img/error404.jpg) no-repeat right center;
     height: calc(100vh - 56px);
@@ -6,7 +48,9 @@
     position: relative;
     background-size: 626px 626px;
 } 
+/* end of backgrounds */
 
+/* text editing */ 
 #error404 h1{
     font-size: 8rem;
     margin-top: 2rem;
@@ -16,19 +60,6 @@
     left: 50px;
     font-size: 25px;
 }
-#registerform{
-    margin: left;
-}
-.forms{
-    position: relative;
-    right: 25rem;
-}
-#photo1{
-    border-radius: 50%;
-    position: relative;
-    left: 25rem;
-    top: -45rem;
-}
 #signup{
     position: relative;
     left: 8rem;
@@ -37,11 +68,6 @@
     font-size: 25px;
     background-color: orange;
 }
-#sign-up2{
-    position: relative;
-    left: 4rem;
-    top: 4rem;
-}
 #brandhead{
     position: relative;
     top:-74.2rem;
@@ -49,14 +75,6 @@
     color: white;
     font-weight: 450;
     font-size: larger;
-}
-.homepage{
-    background: url(https://images.wallpaperscraft.com/image/mountain_peak_trees_183964_1920x1080.jpg)
-    no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
 }
 #headertext{
     position: absolute;
@@ -75,6 +93,28 @@
     font-size: 25px;
     text-shadow: 3px 3px 12px black;
 }
+#warnings{
+    color: red;
+    font-size: large;
+    font-weight: 1000;
+    position: relative;
+    right: 20rem;
+}
+#logwarnings{
+    color: red;
+    font-size: large;
+    font-weight: 1000;
+    position: relative;
+    left: 20rem;
+}
+.logintext{
+    position: relative;
+    text-align: center;
+    top: 5rem;
+}
+/* end of text edits */
+
+/* button edits */
 #submitbutton{
     position: absolute;
     top: 35rem;
@@ -85,15 +125,13 @@
     font-weight: 500;
     padding: 1.5rem 3rem 1.5rem 3rem;
 }
-#sign-uphome{
+#loginbutton{
     position: absolute;
-    top: 42rem;
-    left: 37rem;
-}
-.logforms{
-    position: absolute;
-    left: 5rem;
-    width: 30rem;
+    top: 35rem;
+    left: 17.5rem;
+    background-color: orange;
+    font-size: x-large;
+    font-weight: 500;
 }
 #loginbutton{
     position: absolute;
@@ -103,17 +141,60 @@
     font-size: x-large;
     font-weight: 500;
 }
+/* end of button edits */
+
+/* form edits */
+#registerform{
+    margin: left;
+}
+.forms{
+    position: relative;
+    right: 25rem;
+}
+#logregisterform{
+    position: relative;
+    left: 40rem;
+    top: 5rem;
+}
+.logforms{
+    position: absolute;
+    left: 5rem;
+    width: 30rem;
+}
 #emailbox{
     width: 20rem;
     position: absolute;
     left: 5rem;
     border: white;
 }
-
-#helpmegod{
+#uploadform{
+    position: absolute;
+    left: 50rem;
+    top: 10rem;
+}
+#fullprofileform{
     position: relative;
     width: 30rem;
     left: 10rem;
+}
+#sign-uphome{
+    position: absolute;
+    top: 42rem;
+    left: 37rem;
+}
+#sign-up2{
+    position: relative;
+    left: 4rem;
+    top: 4rem;
+}
+/* end of form edits */
+
+/* image edits */
+#photo1{
+    border-radius: 50%;
+    position: relative;
+    left: 25rem;
+    top: -45rem;
 }
 .grid-item{
     width: calc(33.3333% - 30px);
@@ -126,13 +207,16 @@
 }
 .avatar{
     position: relative;
-    left: 40rem;
-    top: -15rem;
+    left: 20rem;
+    top: -10rem;
+    width: 300px;
+    height: 300x;
+    border-radius: 50%;
 }
-#uploadform{
-    position: absolute;
-    left: 50rem;
-    top: 10rem;
+.imgboi{
+    width: 300px;
+    height: auto;
+    align-content: center;
 }
 .modal {
     position: fixed;
@@ -150,26 +234,6 @@
   width: 100%;
   height: auto;
 }
-.fa.fa-times{
-    position: relative;
-    float: right;
-}
-.dropdown-item{
-    color: white;
-}
-.imgboi{
-    width: 300px;
-    height: auto;
-    align-content: center;
-}
-.editor{
-    background: url(https://wallpapercave.com/wp/ebklaUn.jpg)
-    no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
 .grid-item{
     width: 300px;
     height: 300px;
@@ -178,52 +242,10 @@
     padding-bottom: 50px;
     padding-left: 80px
 }
-.allimages{
-    background: url(https://wallpapercave.com/wp/TfTdoPd.png)
-    no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+/* end of image edits */
+
+/* dropdown menu edits */
+.dropdown-item{
+    color: white;
 }
-.registerbg{
-    background: url(https://images.wallpaperscraft.com/image/mountains_spruce_snow_190607_1920x1080.jpg)
-    no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-.loginpagebg{
-    background: url(https://images.wallpaperscraft.com/image/spots_glitters_paint_190503_1280x720.jpg)
-    no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    
-}
-#warnings{
-    color: red;
-    font-size: large;
-    font-weight: 1000;
-    position: relative;
-    right: 20rem;
-}
-#logwarnings{
-    color: red;
-    font-size: large;
-    font-weight: 1000;
-    position: relative;
-    left: 20rem;
-}
-#logregisterform{
-    position: relative;
-    left: 60rem;
-    top: 10rem;
-}
-.logintext{
-    position: relative;
-    text-align: center;
-    top: 5rem;
-}
+/* end of dropdown edits */

@@ -6,68 +6,97 @@ from flask import current_app as flask_app
 import uuid, time
 
 class Image():
-
+    # Initialises the class
     def __init__(self):
         return None
 
     def get_images(self, limit=20):
-        
+        """
+        Get method.
+
+        Processes request, fetches image IDs from DB, and limits the number displayed to 20.
+        """
         error = None
         images = False
-
+        # Validates and sends the request to the DB.
         try:
             database = Database()
             images = database.get_images(limit)
 
         except Exception as err:
+            # Raise error from failed Flask request.
             flask_app.logger.info(err)
             error = err
 
         if error:
+            # Raise error from failed Firebase request.
             raise Exception(error)
         else:
+            # Return on success. 
             return images
 
     def get_category_images(self, category, limit=20):
+       """
+        Get method
+
+        Fetches image IDs from a selected category from the DB, and limits the number displayed to 20. 
+       """
         
         error = None
         images = False
-        
+        # Validates and sends the request to the DB.
         try:
             database = Database()
             images = database.get_category_images(category, limit)
 
         except Exception as err:
+            # Raise error from failed Flask request.
             flask_app.logger.info(err)
             error = err
 
         if error:
+            # Raise error from failed Firebase request.
             raise Exception(error)
         else:
+            # Return on success. 
             return images
 
     def get_image(self, image_id):
-        
+        """
+        Get method.
+
+        Processes request and fetches image ID, and displays the fetched image for the user.
+        """
         error = None
         image = False
         
+        # Validates the request and fetches the ID from the DB.
         try:
             database = Database()
             image = database.get_image(image_id)
 
         except Exception as err:
+            # Raise error from failed Flask request. 
             flask_app.logger.info(err)
             error = err
 
         if error:
+            # Raise error from failed Firebase request.
             raise Exception(error)
         else:
+            # Return on success
             return image
 
     def delete_image(self, image_id):
+        """
+        Delete method.
+
+        Fetches the image ID from the DB, and removes it from the DB.
+        """
         
         error = None
         
+        # Validates the request, fetches the ID from the DB, and deletes it from the DB.
         try:
             database = Database()
             database.delete_image(image_id)
