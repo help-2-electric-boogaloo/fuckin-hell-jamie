@@ -150,7 +150,7 @@ class Account():
         """
         Like method.
 
-        Processes POST request, and likes image with the matching image ID.
+        Processes POST request, adds/removes the image from the user's 'liked images' or 'unliked images'
 
         Parameters:
             request (obj): The POST request object (the like)
@@ -159,11 +159,11 @@ class Account():
             error (exception): Error from failed Firebase data request
 
         """
-        # validates like request.                
+        # DB checks the users likes in regards to image IDs               
         changed = False
         likes = session['user']['likes']
 
-        # Checks the state of the variable and changes it to the other value.
+        # Firebase checks the whether the image is in the user's 'liked images' or 'unliked images' lists.
         if like == 'true':
             if image_id not in likes:
                 likes.append(image_id)

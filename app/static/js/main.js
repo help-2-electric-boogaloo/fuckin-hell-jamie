@@ -1,6 +1,9 @@
 $(document).ready(function(){
 
 	$('i.like').click(function(e) {
+		/*This listens for a click on a like icon. Upon click, the image ID (associated with whichever like icon was clicked) is placed into the user's 
+		'liked images' or 'unliked images' list within the DB. It also allows the appearance of the like button to be changed upon click, as the displayed class of the 
+		button's appearance changes to the other possible class value. */
 		
 		e.stopPropagation();
 		e.preventDefault();
@@ -35,6 +38,9 @@ $(document).ready(function(){
 
 
 	$('.grid-item figure').click(function(){
+		/*This function listens for a user click on an image defined within the 'grid item' class. Upon click, the modal class of the image is displayed, 
+		along with all of the previously created variables defined for values such as: name, description, etc.  */ 
+
 		var image_data = $(this).closest('.grid-item').data(image);
 		var image = image_data.image;
 		var description = `<p>${image.description}</p>`;
@@ -46,17 +52,18 @@ $(document).ready(function(){
 		$('.modal').modal('show');
 	});	
 
-	
+
+	/* This displays the selected filter on the associated image.*/ 
 	if ($('#filter-select').length > 0 ) {
 		var filter = $('#filter-select').data('filter');
 		$('#filter-select').val(filter);
 	}
-	
+	/* Allows a catergory to be selected for the associated image, allowing it to be displayed in its specific catergory along with other images which have the same catergory.*/ 
 	if ($('#category').length > 0 ) {
 		var category = $('#category').data('category');
 		$('#category').val(category);
 	}
-	
+	/* Allows the filter of an image to be changed to another filter*/
 	$('#filter-select').change(function(e) {
 		var new_filter = 'filter-' + this.value;
 		$('#image figure').removeClass();

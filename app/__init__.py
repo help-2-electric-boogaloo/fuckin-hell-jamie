@@ -44,7 +44,7 @@ def create_app(test_config=None):
 
     router(app)
     return app
-
+    
 
 def router(app):
 
